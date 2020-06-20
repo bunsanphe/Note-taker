@@ -24,8 +24,6 @@ router.post("/notes", (request, response) => {
 router.delete("/notes/:id", (request, response) => {
     store.deleteNotes(request.params.id).then( () => {
         response.json( {ok: true} )
-        console.log(request.params.id)
-        console.log( "DELETE notes")
     })
     .catch( (err) => response.status(500).json(err) );
 });
