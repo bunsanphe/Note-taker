@@ -30,6 +30,7 @@ class Store {
         return this.getNotes().then( (notes) => {
             const newNote = {...note, id: uuidv1() };
             notes.push(newNote);
+            console.log(newNote);
 
             return this.saveNotes(notes).then( () => newNote)
         })
